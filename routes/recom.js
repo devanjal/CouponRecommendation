@@ -1,3 +1,25 @@
+var mysql= require('./mysql')
+var ejs=require('ejs');
+var session = require('express-session');
+var object_id="vp_id";
+exports.getData=function(req,res){
+     var get_items='SELECT * FROM test';
+    //console.log(req.session.user);
+
+    mysql.fetchData(get_items,function(err,result){
+        if(err){
+            console.log(err);
+
+        }
+        else{
+
+            res.send(result);
+            console.log(result);
+
+
+        }});
+};
+
 
 exports.checkLogin = function(req,res){
     // These two variables come from the form on

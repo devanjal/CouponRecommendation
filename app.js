@@ -35,6 +35,8 @@ if ('development' === app.get('env')) {
 	app.use(express.errorHandler());
 }
 app.get('/', routes.index);
+app.get('/show',routes.show);
+app.get('/get', recom.getData);
 app.post('/data', recom.checkLogin);
 
 
