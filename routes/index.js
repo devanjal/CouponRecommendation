@@ -9,5 +9,5 @@ exports.index = function(req, res){
 };
 exports.show = function(req, res){
 
-  res.render('bid_log', { title: 'Coupon Recommendation' });
+  res.render('showData', { title: 'Coupon Recommendation' });
 };
