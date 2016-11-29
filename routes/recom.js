@@ -20,6 +20,10 @@ exports.getData=function(req,res){
         }});
 };
 
+exports.getMockGraphData=function(req,res){
+	var data=[203,156,99,251,305,247];
+	res.send({"status":"success","data":data});
+}
 
 exports.checkLogin = function(req,res){
     // These two variables come from the form on
@@ -51,4 +55,3 @@ exports.logout = function(req,res)
     req.session.destroy();
     res.redirect('/');
 };
-

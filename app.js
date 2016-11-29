@@ -37,6 +37,7 @@ if ('development' === app.get('env')) {
 app.get('/', routes.index);
 app.get('/show',routes.show);
 app.get('/graphs', routes.graphs);
+app.get('/getMockGraphData', recom.getMockGraphData);
 app.get('/get', recom.getData);
 app.post('/data', recom.checkLogin);
 

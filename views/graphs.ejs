@@ -14,11 +14,17 @@
 
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <!-- Loading the AngularJS file from /public/angularJS folder -->
-<script src="angularjs/getData.js"></script>
+<script src="angularjs/getGraphData.js"></script>
+
+<!-- Files used to construct plots (bar chart, line chart, scatter plot, etc.) on page-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.1/Chart.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.1/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.1/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.1/Chart.min.js"></script>
 
 <!--<h1 align="center">Coupon Recommender</h1>-->
 
-<body ng-app="getData" ng-controller="getData">
+<body ng-app="getGraphData" ng-controller="getGraphData">
 <div class="row">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -293,7 +299,7 @@
                         </ul>
                     </div></div></div></nav>
 
-                    
+
         <div class="row">
           <div class="col-sm-6">
             <table class="table table-bordered">
