@@ -82,9 +82,6 @@
                             <li>
                                 <a href="/user"><i class="fa fa-edit fa-fw"></i>User Datasets</a>
                             </li>
-                            <li>
-                                <a href="/sell_history"><i class="fa fa-edit fa-fw"></i>Products</a>
-                            </li>
 
                             <li>
                                 <a href="/buy_history"><i class="fa fa-edit fa-fw"></i>Graphs</a>
@@ -117,16 +114,16 @@
 
 
 
-                    <td>user_id</td>
-                    <td>coupon_id</td>
+                    <td>User_id</td>
+                    <td> Purchased Coupon_id</td>
 
 
                 </tr>
                 <tr class="row" ng-repeat="test in test">
                     <!--<td>{{test.id}}</td>-->
 
-                    <td>{{test.user_id}}</td>
-                    <td>{{test.coupon_id}}</td>
+                    <td>{{test.USER_ID_hash}}</td>
+                    <td>{{test.PURCHASED_COUPONS}}</td>
                     <!--<td>{{test.item_quantity}}</td>-->
 
                 </tr>
