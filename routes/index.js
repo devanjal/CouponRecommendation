@@ -5,7 +5,7 @@
 
 exports.index = function(req, res){
 
-  res.render('homepage', { title: 'Coupon Recommendation' });
+  res.redirect('/show');
 };
 exports.show = function(req, res){
 
