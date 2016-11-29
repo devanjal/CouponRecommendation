@@ -49,7 +49,7 @@ app.get('/gettrain',data.train);
 app.get('/train',routes.getTrain);
 app.get('/user_train',data.user_train);
 app.get('/user',routes.user_train);
-app.get('/about',routes.about)
+app.get('/about',routes.about);
 app.post('/data', recom.checkLogin);
 
 
