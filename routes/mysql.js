@@ -13,7 +13,7 @@ function getConnection(){
 		host     : 'test.cfuukp9ynhti.us-west-2.rds.amazonaws.com',
 		user     : 'test',
 		password : '12345678',
-		database : 'test',
+		database : 'coupon',
 		port  : 3306
 	});
 	return connection;

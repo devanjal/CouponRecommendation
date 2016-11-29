@@ -11,6 +11,7 @@ var express = require('express')
 
 var expressSession = require("express-session");
 var recom=require('./routes/recom');
+var data=require('./routes/data')
 
 var app = express();
 
@@ -37,6 +38,13 @@ if ('development' === app.get('env')) {
 app.get('/', routes.index);
 app.get('/show',routes.show);
 app.get('/get', recom.getData);
+app.get('/getTest',data.test);
+app.get('/test',routes.getTest);
+app.get('/gettrain',data.train);
+app.get('/train',routes.getTrain);
+app.get('/user_train',data.user_train);
+app.get('/user',routes.user_train);
+app.get('/about',routes.about)
 app.post('/data', recom.checkLogin);
 
 
