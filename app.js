@@ -36,11 +36,12 @@ if ('development' === app.get('env')) {
 }
 app.get('/', routes.index);
 app.get('/show',routes.show);
+app.get('/graphs', routes.graphs);
 app.get('/get', recom.getData);
 app.post('/data', recom.checkLogin);
 
 
 	http.createServer(app).listen(app.get('port'), function(){
 		console.log('Express server listening on port ' + app.get('port'));
-	});  
+	});
 //});
