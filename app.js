@@ -39,8 +39,8 @@ app.get('/show',routes.show);
 app.get('/graphs', routes.graphs);
 app.get('/getMockGraphData', recom.getMockGraphData);
 app.get('/getCategoryCount', recom.getCategoryCount);
-// app.get('/getMonthlyCouponCount', recom.getMonthlyCouponCount);
-// app.get('/getWeekDayCouponCount', recom.getWeekDayCouponCount);
+app.get('/getMonthlyCouponCount', recom.getMonthlyCouponCount);
+app.get('/getWeekDayCouponCount', recom.getWeekDayCouponCount);
 app.get('/get', recom.getData);
 app.post('/data', recom.checkLogin);
 

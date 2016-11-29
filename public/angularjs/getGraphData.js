@@ -4,33 +4,40 @@ var getGraphData = angular.module('getGraphData', []);
 getGraphData.controller('getGraphData', function($scope, $http){
 	$http({
 		method : "GET",
-		url : '/getMockGraphData',
+		url : '/getMonthlyCouponCount',
 		}).then(function(response) {
 		  var realTimeData = response.data;
+      var arrayLength = realTimeData.length;
+      var monthLabels = []
+      var monthCount = []
+      for (var i = 0; i < arrayLength; i++) {
+          monthLabels.push(realTimeData[i]["month"]);
+          monthCount.push(realTimeData[i]["count"]);
+      }
 			var ctx = document.getElementById("lineChart");
 			var myChart = new Chart(ctx, {
 			    type: 'line',
 			    data: {
-			        labels : ["January","February","March","April","May","June"],
+			        labels : monthLabels,
 				    datasets: [
-				    {
-				    	label:" The first dataset",
-				        fillColor : "rgba(172,194,132,0.4)",
-				        backgroundColor: "rgba(255,99,132,0.2)",
-						strokeColor : "#ACC26D",
-						pointColor : "#fff",
-						pointStrokeColor : "#9DB86D",
-						data : realTimeData.data
-				    },
-				    {
-				    	label:" The second dataset",
-				        fillColor : "rgba(172,194,132,0.4)",
-				        backgroundColor: "rgba(255,99,132,0.2)",
-						strokeColor : "#ACC26D",
-						pointColor : "#fff",
-						pointStrokeColor : "#9DB86D",
-						data : [100,130,150,170,190,220]
-				    }
+  				    {
+  				    	label:"Coupon Count by Month",
+  				        fillColor : "rgba(172,194,132,0.4)",
+  				        backgroundColor: "rgba(255,99,132,0.2)",
+  						strokeColor : "#ACC26D",
+  						pointColor : "#fff",
+  						pointStrokeColor : "#9DB86D",
+  						data : monthCount
+  				    },
+  				    // {
+  				    // 	label:" The second dataset",
+  				    //     fillColor : "rgba(172,194,132,0.4)",
+  				    //     backgroundColor: "rgba(255,99,132,0.2)",
+  						// strokeColor : "#ACC26D",
+  						// pointColor : "#fff",
+  						// pointStrokeColor : "#9DB86D",
+  						// data : [100,130,150,170,190,220]
+  				    // }
 				    ]
 			    }
 			});
@@ -53,7 +60,6 @@ $http({
           categoryLabels.push(realTimeData[i]["category"]);
           categoryCount.push(realTimeData[i]["count"]);
       }
-      console.log(categoryCount);
 
       var ctx3 = document.getElementById("donutChart");
       var myDoughnutChart = new Chart(ctx3, {
@@ -107,33 +113,42 @@ $http({
 
  $http({
  		method : "GET",
- 		url : '/getMockGraphData',
+ 		url : '/getWeekDayCouponCount',
  		}).then(function(response) {
        var realTimeData = response.data;
+       console.log(realTimeData);
+       var dayCount = []
+       dayCount.push(realTimeData[0].mon);
+       dayCount.push(realTimeData[0].tue);
+       dayCount.push(realTimeData[0].wed);
+       dayCount.push(realTimeData[0].thu);
+       dayCount.push(realTimeData[0].fri);
+       dayCount.push(realTimeData[0].sat);
+       dayCount.push(realTimeData[0].sun);
        var ctx4 = document.getElementById("barChart");
        var myBarChart = new Chart(ctx4, {
            type: 'bar',
            data: {
-               labels: ["January", "February", "March", "April", "May", "June", "July"],
+               labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
                datasets: [
                    {
-                       label: "My First dataset",
+                       label: "Coupon Availability by day of week",
                        backgroundColor: "rgba(179,181,198,0.2)",
                        borderColor: "rgba(255,99,132,1)",
                        borderWidth: 1,
                        hoverBackgroundColor: "rgba(255,99,132,0.4)",
                        hoverBorderColor: "rgba(255,99,132,1)",
-                       data: [65, 59, 80, 81, 56, 55, 40],
+                       data: dayCount,
                    },
-                   {
-                       label: "My Second dataset",
-                       backgroundColor: "rgba(255,99,132,0.2)",
-                       borderColor: "rgba(255,99,132,1)",
-                       borderWidth: 1,
-                       hoverBackgroundColor: "rgba(255,99,132,0.4)",
-                       hoverBorderColor: "rgba(255,99,132,1)",
-                       data: [12, 52, 65, 45, 67, 32, 12],
-                   }
+                  //  {
+                  //      label: "My Second dataset",
+                  //      backgroundColor: "rgba(255,99,132,0.2)",
+                  //      borderColor: "rgba(255,99,132,1)",
+                  //      borderWidth: 1,
+                  //      hoverBackgroundColor: "rgba(255,99,132,0.4)",
+                  //      hoverBorderColor: "rgba(255,99,132,1)",
+                  //      data: [12, 52, 65, 45, 67, 32, 12],
+                  //  }
                ]
            }
        });
