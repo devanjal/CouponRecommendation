@@ -37,6 +37,11 @@ if ('development' === app.get('env')) {
 }
 app.get('/', routes.index);
 app.get('/show',routes.show);
+app.get('/graphs', routes.graphs);
+app.get('/getMockGraphData', recom.getMockGraphData);
+app.get('/getCategoryCount', recom.getCategoryCount);
+app.get('/getMonthlyCouponCount', recom.getMonthlyCouponCount);
+app.get('/getWeekDayCouponCount', recom.getWeekDayCouponCount);
 app.get('/get', recom.getData);
 app.get('/getTest',data.test);
 app.get('/test',routes.getTest);
@@ -50,5 +55,5 @@ app.post('/data', recom.checkLogin);
 
 	http.createServer(app).listen(app.get('port'), function(){
 		console.log('Express server listening on port ' + app.get('port'));
-	});  
+	});
 //});
