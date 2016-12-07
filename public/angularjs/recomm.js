@@ -32,7 +32,7 @@ reco.controller('reco', function($scope, $http,$window) {
     $scope.validlogin = true;
     $scope.myData = [];
     $scope.submit = function() {
-        document.getElementById("display").style.display='block'
+
         $http({
             method : "POST",
             url : '/data',
