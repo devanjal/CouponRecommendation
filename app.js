@@ -50,7 +50,9 @@ app.get('/train',routes.getTrain);
 app.get('/user_train',data.user_train);
 app.get('/user',routes.user_train);
 app.get('/about',routes.about);
+app.get('/userid', routes.user);
 app.post('/data', recom.checkLogin);
+app.post('/getCouponList',data.getCouponList);
 
 
 	http.createServer(app).listen(app.get('port'), function(){

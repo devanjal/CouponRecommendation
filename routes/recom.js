@@ -3,7 +3,7 @@ var ejs=require('ejs');
 var session = require('express-session');
 var object_id="vp_id";
 exports.getData=function(req,res){
-     var get_items='SELECT * FROM recommendation';
+    var get_items='SELECT * FROM recommendation';
     //console.log(req.session.user);
 
     mysql.fetchData(get_items,function(err,result){
@@ -21,8 +21,8 @@ exports.getData=function(req,res){
 };
 
 exports.getMockGraphData=function(req,res){
-	var data=[203,156,99,251,305,247];
-	res.send({"status":"success","data":data});
+    var data=[203,156,99,251,305,247];
+    res.send({"status":"success","data":data});
 }
 
 exports.getCategoryCount = function(req,res){

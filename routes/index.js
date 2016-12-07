@@ -35,6 +35,10 @@ exports.show = function(req, res){
 
   res.render('showData', { title: 'Coupon Recommendation' });
 };
+exports.user = function(req, res){
+
+  res.render('user', { title: 'Coupon Recommendation' });
+};
 exports.graphs = function(req, res){
 
   res.render('graphs', { title: 'Data Display' });

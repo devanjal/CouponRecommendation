@@ -86,7 +86,7 @@ function cron_mysql(callback, sqlQuery){  //console.log("\nSQL Query::"+sqlQuery
 			callback(err,rows);
 		}
 		else{
-			console.log(rows);
+			//console.log(rows);
 			callback(err, rows);
 		}
 
