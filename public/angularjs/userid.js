@@ -4,7 +4,7 @@ var userid = angular.module('userid', []);
 userid.controller('userid', function($scope, $http,$window) {
 
     $scope.submit = function() {
-        alert($scope.userId);
+        //alert($scope.userId);
         $http({
             method : "POST",
             url : '/getCouponList',
@@ -25,7 +25,7 @@ userid.controller('userid', function($scope, $http,$window) {
                 console.log("Heree");
 
                 $scope.test=data;
-               alert(data.genre_name)
+              // alert(data.genre_name)
             }
         }).error(function(error) {
             $scope.validlogin = true;
