@@ -4,7 +4,6 @@ var userid = angular.module('userid', []);
 userid.controller('userid', function($scope, $http,$window) {
 
     $scope.submit = function() {
-        document.getElementById("display").style.display='block'
         alert($scope.userId);
         $http({
             method : "POST",
