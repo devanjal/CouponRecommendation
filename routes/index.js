@@ -39,3 +39,7 @@ exports.graphs = function(req, res){
 
   res.render('graphs', { title: 'Data Display' });
 };
+exports.userCoupons = function(req, res){
+
+  res.render('getCouponListView', { title: 'Data Display' });
+};

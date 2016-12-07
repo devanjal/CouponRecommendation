@@ -3,7 +3,7 @@ var ejs=require('ejs');
 var session = require('express-session');
 var object_id="vp_id";
 exports.test=function(req,res){
-    var get_items='SELECT * FROM coupon_list_test';
+    var get_items='SELECT * FROM coupon.coupon_list_test';
     //console.log(req.session.user);
 
     mysql.fetchData(get_items,function(err,result){
@@ -20,7 +20,7 @@ exports.test=function(req,res){
         }});
 };
 exports.train=function(req,res){
-    var get_items='SELECT * FROM coupon_list_train';
+    var get_items='SELECT * FROM coupon.coupon_list_train';
     //console.log(req.session.user);
 
     mysql.fetchData(get_items,function(err,result){
@@ -37,7 +37,7 @@ exports.train=function(req,res){
         }});
 };
 exports.user_train=function(req,res){
-    var get_items='SELECT * FROM coupon_detail_train limit 500';
+    var get_items='SELECT * FROM coupon.coupon_detail_train limit 500';
     //console.log(req.session.user);
 
     mysql.fetchData(get_items,function(err,result){
@@ -53,4 +53,3 @@ exports.user_train=function(req,res){
 
         }});
 };
-

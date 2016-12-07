@@ -38,10 +38,12 @@ if ('development' === app.get('env')) {
 app.get('/', routes.show);
 app.get('/show',routes.show);
 app.get('/graphs', routes.graphs);
+app.get('/userCoupons', routes.userCoupons);
 app.get('/getMockGraphData', recom.getMockGraphData);
 app.get('/getCategoryCount', recom.getCategoryCount);
 app.get('/getMonthlyCouponCount', recom.getMonthlyCouponCount);
 app.get('/getWeekDayCouponCount', recom.getWeekDayCouponCount);
+app.get('/getCouponList', recom.getCouponList);
 app.get('/get', recom.getData);
 app.get('/getTest',data.test);
 app.get('/test',routes.getTest);
