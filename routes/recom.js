@@ -3,7 +3,7 @@ var ejs=require('ejs');
 var session = require('express-session');
 var object_id="vp_id";
 exports.getData=function(req,res){
-    var get_items='SELECT * FROM recommendation';
+    var get_items='SELECT * FROM recommendation limit 150';
     //console.log(req.session.user);
 
     mysql.fetchData(get_items,function(err,result){
