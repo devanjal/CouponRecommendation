@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' === app.get('env')) {
 	app.use(express.errorHandler());
 }
-app.get('/', routes.show);
+app.get('/', routes.graphs);
 app.get('/show',routes.show);
 app.get('/graphs', routes.graphs);
 app.get('/getMockGraphData', recom.getMockGraphData);

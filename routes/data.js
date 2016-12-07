@@ -58,11 +58,11 @@ exports.getCouponList = function(req,res){
    // console.log(user_id);
     var query1 = "SELECT purchased_coupons FROM recommendation where USER_ID_hash='" +user_id +"'";
     var query3 = "select genre_name, catalog_price, discount_price, valid_date,c_type from" +
-        " (SELECT distinct cl.genre_name, cl.CATALOG_PRICE, cl.DISCOUNT_PRICE, DATE_FORMAT(cl.DISPEND,'%Y-%m-%d') as valid_date, 'Purchased' as c_type" +
+        " (SELECT distinct cl.genre_name, cl.catalog_price, cl.discount_price, DATE_FORMAT(cl.DISPEND,'%Y-%m-%d') as valid_date, 'Purchased' as c_type" +
         " FROM coupon_detail_train cd, coupon_list_train cl" +
         " where cd.USER_ID_hash='" +user_id +"' and cd.COUPON_ID_hash=cl.COUPON_ID_hash" +
         " union" +
-        " SELECT distinct cl.genre_name, cl.CATALOG_PRICE, cl.DISCOUNT_PRICE, DATE_FORMAT(cl.DISPEND,'%Y-%m-%d') as valid_date, 'Visited' as c_type" +
+        " SELECT distinct cl.genre_name, cl.catalog_price, cl.discount_price, DATE_FORMAT(cl.DISPEND,'%Y-%m-%d') as valid_date, 'Visited' as c_type" +
         " FROM coupon_visit_train cv, coupon_list_train cl" +
         " where cv.USER_ID_hash='" +user_id +"' and cv.VIEW_COUPON_ID_hash=cl.COUPON_ID_hash)  tab";
     mysql.fetchData(query1, function(err,result) {
@@ -81,7 +81,7 @@ exports.getCouponList = function(req,res){
                     }
                 })(i);
             }
-            var query2 = "SELECT distinct cl.genre_name, cl.CATALOG_PRICE, cl.DISCOUNT_PRICE, DATE_FORMAT(cl.DISPEND,'%Y-%m-%d') as valid_date, 'Recommended' as c_type" +
+            var query2 = "SELECT distinct cl.genre_name, cl.catalog_price, cl.discount_price, DATE_FORMAT(cl.DISPEND,'%Y-%m-%d') as valid_date, 'Recommended' as c_type" +
                 " FROM recommendation r, coupon_list_test cl" +
                 " where r.USER_ID_hash='" +user_id +"' and cl.COUPON_ID_hash in (" +coupons +")";
             mysql.fetchData(query2, function(err,result1) {
